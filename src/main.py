@@ -1,6 +1,6 @@
 
 import os, sys
-
+_filepath = os.path.dirname(sys.argv[0])
 if sys.version_info[0] == 3:
     import you_get
     if __name__ == '__main__':
