@@ -37,7 +37,8 @@ jobs:
 
       - name: Build Package
         run: |
-          python -m PyInstaller -F -c  --name you-get you-get
+          python setup.py install
+          python -m PyInstaller -F -c --hidden-import=you-get --name you-get you-get
           
       - name: Upload binary
         uses: actions/upload-artifact@v3
