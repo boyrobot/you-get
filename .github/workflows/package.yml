@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix: 
-        os: [windows-2019, ubuntu-20.04]
+        os: [windows-2019]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -38,7 +38,7 @@ jobs:
       - name: Build Package
         run: |
           python setup.py install
-          python -m PyInstaller -F -c --hidden-import=you-get --name you-get you-get
+          python -m PyInstaller -F -c --name you-get src/main.py
           
       - name: Upload binary
         uses: actions/upload-artifact@v3
